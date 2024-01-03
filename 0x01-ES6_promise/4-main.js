@@ -1,6 +1,3 @@
-function signUpUser(firstName, lastName) {
-  return Promise.resolve({
-    firstName: firstName,
-    lastName: lastName,
-  });
-}
+import signUpUser from "./4-user-promise";
+
+console.log(signUpUser("Bob", "Dylan"));
