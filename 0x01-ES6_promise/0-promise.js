@@ -5,11 +5,11 @@ export default function getResponseFromAPI() {
       // If the operation is successful, resolve the promise
       resolve({
         status: 200,
-        body: 'Success'
+        body: 'Success',
       });
     } else {
       // If the operation fails, reject the promise
-      reject(new Error("Error"));
+      reject(new Error('Error'));
     }
   });
 }
