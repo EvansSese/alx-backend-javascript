@@ -1,6 +1,6 @@
 export default function cleanSet(set, startString) {
   // Filter the set values that start with the specified string
-  if(startString === '') {
+  if (!set || !startString || !(set instanceof Set) || typeof startString !== 'string') {
     return '';
   }
   const filteredValues = Array.from(set).filter((value) => value.startsWith(startString));
