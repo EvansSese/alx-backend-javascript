@@ -9,7 +9,7 @@ export default function updateStudentGradeByCity(studentList, city, newGrades) {
 
     const updatedStudent = {
       ...student,
-      grade: newGrade ? newGrade.grade : 'N/A'
+      grade: newGrade ? newGrade.grade : 'N/A',
     };
 
     return updatedStudent;
