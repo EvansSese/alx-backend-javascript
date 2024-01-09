@@ -7,10 +7,12 @@ export default function updateStudentGradeByCity(studentList, city, newGrades) {
     // Find the corresponding new grade for the student, if available
     const newGrade = newGrades.find((grade) => grade.studentId === student.id);
 
-    // Update the student's grade attribute
-    student.grade = newGrade ? newGrade.grade : 'N/A';
+    const updatedStudent = {
+      ...student,
+      grade: newGrade ? newGrade.grade : 'N/A'
+    };
 
-    return student;
+    return updatedStudent;
   });
 
   return updatedStudents;
