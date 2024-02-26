@@ -10,8 +10,6 @@ rl.prompt();
 
 rl.on('line', (input) => {
     console.log(`Your name is: ${input}`);
-    console.log("Welcome to Holberton School, what is your name?");
-    rl.prompt();
 });
 
 rl.on('close', () => {
