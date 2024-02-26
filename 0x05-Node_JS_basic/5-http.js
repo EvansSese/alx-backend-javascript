@@ -8,7 +8,7 @@ const app = http.createServer((req, res) => {
 
     // Handling different URL paths
     if (req.url === '/') {
-        res.end('Hello Holberton School!\n');
+        res.end('Hello Holberton School!');
     } else if (req.url === '/students') {
         // Call countStudents function to get student information
         countStudents('database.csv')
