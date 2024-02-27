@@ -11,7 +11,7 @@ function countStudents(path) {
         const fields = {};
         students.forEach(student => {
             const field = student[3];
-            if (fields[field]) {
+            if (fields.hasOwnProperty(field)) {
                 fields[field].push(student[0]);
             } else {
                 fields[field] = [student[0]];
@@ -20,7 +20,9 @@ function countStudents(path) {
 
         console.log(`Number of students: ${totalCount}`);
         for (const field in fields) {
-            console.log(`Number of students in ${field}: ${fields[field].length}. List: ${fields[field].join(', ')}`);
+            if (fields.hasOwnProperty(field)) {
+                console.log(`Number of students in ${field}: ${fields[field].length}. List: ${fields[field].join(', ')}`);
+            }
         }
     } catch (error) {
         throw new Error("Cannot load the database");
