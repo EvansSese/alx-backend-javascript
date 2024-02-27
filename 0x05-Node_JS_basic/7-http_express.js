@@ -16,7 +16,9 @@ app.get('/students', (req, res) => {
 
             let response = `This is the list of our students\nNumber of students: ${totalCount}\n`;
             for (const field in fields) {
-                response += `Number of students in ${field}: ${fields[field].length}. List: ${fields[field].join(', ')}\n`;
+                if (Object.prototype.hasOwnProperty.call(fields, field)) {
+                    response += `Number of students in ${field}: ${fields[field].length}. List: ${fields[field].join(', ')}\n`;
+                }
             }
             res.send(response);
         })
